@@ -3,4 +3,7 @@ FROM python:3.8.1-slim
 WORKDIR /app
 COPY . .
 
+USER root
+RUN chmod +x test_script.sh
+
 ENTRYPOINT ["/bin/sh","test_script.sh"]
