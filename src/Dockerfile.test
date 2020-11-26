@@ -3,7 +3,7 @@ FROM python:3.8.1-slim
 WORKDIR /app
 COPY . .
 
-USER root
-RUN chmod +x test_script.sh
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 ENTRYPOINT ["/bin/sh","test_script.sh"]
